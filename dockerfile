@@ -3,8 +3,8 @@ FROM iitmshakti/riscv-dev:0.5.0 as riscv-ocaml-cross
 RUN apt-get -y update
 
 # Get the RISC-V compiler 
-# RUN git clone https://github.com/patricoferris/riscv-ocaml riscv-ocaml-src
-RUN git clone https://github.com/kayceesrk/riscv-ocaml -b 4.07+cross riscv-ocaml-src
+RUN git clone https://github.com/patricoferris/riscv-ocaml -b 4.07+cross+custom riscv-ocaml-src
+# RUN git clone https://github.com/kayceesrk/riscv-ocaml -b 4.07+cross riscv-ocaml-src
 # Change into the source code and make the compiler 
 WORKDIR riscv-ocaml-src
 RUN ./configure -no-ocamldoc -no-debugger -prefix /riscv-ocaml && \
